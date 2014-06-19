@@ -1,5 +1,8 @@
 # An educational, reproducible parallel randomized controlled trial comparing a scalable coaching clinical training in motivational interviewing vs. standard online training and its effect on knowledge, clinical impact and provider satisfaction with the learning experience.
 
+<!-- out of my shoes methodology -->
+
+
 Gustavo Medeiros  
 Hermano Tavares  
 Bruno Melo  
@@ -31,6 +34,16 @@ training length - not enough
 <!-- write at the end -->
 
 ## Introduction
+
+<!-- 
+A Entrevista Motivacional (EM) é  “um método diretivo centrado no cliente para intensificar a motivação intrínseca na mudança explorando e resolvendo a ambivalência” (Miller e Rollnick, 2002). Ela tem origens na terapia centrada no cliente de Carl Rogers e tem como foco compreender o mundo interno do paciente para evidenciar discrepâncias de valores e, consequentemente, tentar promover mudanças (Arkowitz el al, 2008). 
+A EM tem se mostrado uma estratégia eficaz e efetiva no controle de diferentes transtornos mentais prevalentes. Por exemplo, há evidências de seu impacto em problemas relacionados ao uso de substâncias, transtornos alimentares, transtornos ansiosos, transtorno do jogo e na promoção do bem estar. (Arkowitz el al, 2008; Burke, 2003; Lundahl and Burke, 2009). 
+A EM também tem sido usada em diferentes contextos que extrapolam a prática psiquiátrica clínica como, por exemplo, na implementação de hábitos saudáveis (prática de exercício físico, mudança de dieta), otimização de adesão medicamentosa, tratamento de doenças crônicas e em saúde pública (Arkowitz el al, 2008, Lundahl and Burke, 2009). 
+Por sua demonstrada eficácia, é ensinada em contextos psiquiátricos e clínicos porém principalmente no campo clínico há uma lacuna no conhecimento de EM o que dificulta sua implementação de forma mais consistente (Soderlund, 2011). As três formas mais comuns de fornecer treinamento em EM são por meio prática clínica supervisionada, de aulas teóricas presenciais e leitura - self-directed reading - Abele et al, 2011. No entanto, às vezes o treinamento em EM envolve apenas os dois últimos (Abele et al, 2011) já que a prática clínica supervisionada necessita de maior estrutura didática. Problemas como a carência de instrutores treinados a falta de padronização do material ensinado são barreiras a um ensino mais consistente (Abele et al, Sod et al 2011). Enfim, apesar de sua relativa eficácia, o treinamento em EM pode ser otimizado. 
+           A utilização de Internet para fins didáticos e intervencionistas em medicina tem crescido consideravelmente. (Mitchell et al, 2009). A internet tem o potencial de levar conhecimento para um público amplo de uma maneira acessível e por alcançar um número grande de indivíduos mesmo intervenções com impacto discreto podem representar uma contribuição significativa na saúde pública (Mitchell et al, 2009). Um dos problemas com as intervenções online é a baixa aderência e portanto, é importante desenvolver métodos didáticos mais eficazes e práticos para melhorá-la (Bolier et al, 2013).
+
+
+ -->
 
 Motivational interviewing has been demonstrated to be fairly efficacious and effective strategy in controlling a number of highly prevalent mental health conditions, among them disruptive, impulse-control, and conduct disorders ([Burke, 2003](http://www.vcu.edu/idas/pdfs/efficacy%20of%20MI-meta-analysis.pdf); [Lundahl, 2009](http://faculty.fortlewis.edu/burke_b/criticalthinking/readings/mi-burke.pdf)). Despite its demonstrated effectiveness, training novice providers in motivational interviewing has remained a craft, traditional coaching models where a novice is mentored 1:1 by an expert still being the most prevalente model. <!-- ref --> Although effective, this method is all but scalable.
 
@@ -68,20 +81,31 @@ Em casos mais adiantados interagir com a tela.
 
 
  -->
+### Qualitative study
+<!-- add sections from wil's study based on coreq guidelines -->
+
+### Trial
 
 This trial was designed and reported in accordance with the recommendations provided by the [CONSORT statement, version 2010](http://www.consort-statement.org/)
 
-### Ethics
+#### Ethics
 This study was approved by the Ethics Committe at the University of São Paulo ([Universidade de São Paulo](http://www5.usp.br/en/)), informed consent having been waived since this was considered a research with minimal risk within an educational context. All participants were ensured that their involvement with the trial was absolutely unrelated to their performance in their current work or study and that they could exit the study at any point if they so desired.
 
-### Trial Design
+#### Trial Design
 
 This is a parallel, reproducible, controlled randomized trial comparing a control versus a scalable coaching arm. The trial involved 106 participants who completed the trial <!-- replace by the actual number and describe dropout rate -->, randomized on a 1:1 ratio to the intervention and control arms, with the intervention and respective follow-up lasting a total of four weeks. No changes to the initially methods design were implemented while the trial was in course. <!-- need to check at the end whether this is true -->
 
-### Participants
+#### Participants
 Our study involved 106 participants. Participants were health care providers or students at <!-- add -->, located in the metropolitan area of São Paulo. For each participant we have collected information on gender, age, profession and previous educational background.
 
-### Interventions
+#### Interventions
+
+<!-- 
+O trial tem uma duração de 4 semanas, com 4 sessões de duração aproximada de 30 minutos cada uma.
+- Treinamento otimizado: O braço do ensino otimizado usa como sua principal base conceitual a a Teoria do Design Instrucional para Aprendizado Complexo de Merrienboer - Merrienboer’s Instructional Design Theory Complex Learning - Merrienboer, 2012. Basicamente, este método visa o desenvolvimento de programas que ajudarão os estudantes não apenas a adquirir o conhecimento fornecido mas também transferir as competências para as diferentes situações do mundo real, ou seja, foca na aplicação prática do conhecimento. Esse modelo teórico tem como cerne do processo de ensino a solução de problemas.
+Em resumo, na primeira semana os participantes assistirão a um vídeo que  descreve brevemente os fundamentos da EM e seus quatro princípios básicos da EM: expressar empatia, desenvolver discrepância, fluir com resistência e promover a auto-eficácia (Arkowitz el al, 2008). Depois, ainda durante a primeira sessão, os indivíduos serão expostos a um vídeo com casos fictícios onde eles terão que usar essas mesmas habilidades em um nível muito simples. Nas semanas subsequentes, há um aumento no nível de complexidade dos casos imitando, assim, uma situação clínica real, sempre mantendo como pano de fundo o desenvolvimento de habilidades fundamentais da EM: utilização de perguntar abertas, escuta reflexiva, reforço positivo, capacidade de resumir e de eliciar a conversa de mudança. 
+Os exemplos clínicos abordarão patologias e situações bastante prevalentes e que se configuram problemas de saúde pública como, por exemplo, etilismo, tabagismo, estímulo ao exercício físico, adesão ao tratamento, entre outros.
+ -->
 
 
 <!-- 
@@ -128,6 +152,9 @@ All educational material for this course is made available within our Reproducib
 <!-- add CONSORT for Non-Pharmacological Treatment Interventions -->
 
 ### Outcome variables
+<!-- soft skills, tacit knowledge, rationality, competition, empathy, choice, aesthetics, memory, emotion, happiness - ask mauro for opinion on what could work -->
+
+<!-- : toolkit send email to yourself as 4 ferramentas vão ser, a principio:  outcome variables:  -->
 
 <!-- 
 
@@ -183,25 +210,45 @@ This group of items was exposed to the participants in our trial. Similar to the
 
 Knowledge evaluation occurred at the end of weeks two and four. These assessments are also automatically recorded within the platform.
 
+<!-- 
+O conhecimento em EM foi medido através de um grupo de questões (itens) abordando os quatro princípios fundamentais da EM:
+Expressar empatia: tentativa de experimentar o mundo a partir da perspectiva do paciente para compreender melhor seus pensamentos, sentimentos e atitudes.
+Desenvolver discrepância: capacidade de incitar no paciente a percepção que há uma discrepância entre seus valores e seus comportamento. A consciência dessa discrepância tende a facilitar mudanças.
+Fluir com resistência: incentivar, de maneira não combativa, o paciente a refletir sobre as vantagens e desvantagens da mudança.
+Promover a auto-eficácia: intensificar no cliente a crença de que ele é capaz de executar as ações necessárias e ter sucesso no processo de mudança.
+
+ -->
+
+##### Work engagement
+short scale, validation references
+
+##### Meaning
+short scale, validation references
+
+##### Purpose in life 
+short scale, validation references
+
+##### Job satisfaction
+short scale, validation references
 
 
-####  Sample size
+#####  Sample size
 
 Given the absence of preliminary efficacy data, we calculated our sample size based on an assumption of a two-sample t-test for an index representing the worst case scenario for each of the three outcome variables, with an effect size of 55%, a significance level and statistical power set at the traditional levels of 0.05 and 80%, respectively. Under these assumptions the estimated required sample size is of 52.9 per group, which we have rounded to 53, ultimately leading to a total sample size of 106 participantsin total. Taking into account a worst case scenario dropout rate of approximately 20%, we therefore plan to enroll 140 participants.
 
 
-####  Interim analyses and stopping guidelines
+#####  Interim analyses and stopping guidelines
 
 Given the relatively short duration of our trial, we did not perform an interim analyses. In addition, given the low risk associated with the intervention, our guidelines did recommend that the trial be stopped in case of an unlikely loss of confidentiality that might compromise participants privacy, which has not occurred.
 
-####  Randomization: sequence generation
+#####  Randomization: sequence generation
 
 All randomization schedules were delivered through [Planout](http://facebook.github.io/planout/) within the [edx Code](http://code.edx.org/) platform. Briefly, Planout makes use of a pseudorandom number generator from the [Python language](https://www.python.org/), which has been extensively tested. <!-- need ref --> Randomization was blocked at 10 participants, thus decreasing the likelihood of a possible imbalance.  
 
 All randomization was delivered through the Open edX platform, thus ensuring that participants and investigators are blind to the allocation. Data analysts (RP and JRV) received a dataset from the computer scientist (BM) where the two randomization arms were designated by unspecific letters, thus ensuring that the analysis is also conducted in a blind fashion.
 
 
-#### Statistical methods 
+##### Statistical methods 
 
 All analyses were conducted by the members in our team (RP, JRV). The data analysis started with an overall evaluation of individual variables to assess distributions for continuous variables (e.g., participant's age) in terms of their distributions, as well as the frequency/percentage for categorical variables (e.g., gender). 
 
