@@ -7,7 +7,27 @@ Gustavo Medeiros
 Hermano Tavares  
 Bruno Melo  
 Joao Ricardo Vissoci  
-Ricardo Pietrobon  
+Ricardo Pietrobon   
+
+
+<!-- 
+might present whole task before supportive info - modeling example
+
+4-5 learning tasks
+
+task classes - more difficult/aggressive patients, deeper abilities, single/multiple problem, situational factors (socio-demographic), list complexity factors, sequence from most common to least common, progression of cog strategies or mental models through comorbidities and social situations, scaffolding teaching to read and then find Clinical Practice Guidelines on their own, learner poses questions (missing)
+
+procedural - infographics, videos, standardized EMR fields
+
+part-time task - drugs, body language, summarizing
+
+moving control in assessment and task selection to learners - select which whole tasks they want to perform through emphasis description
+
+no impact on knowledge, more on practice (transfer tasks), near transfer and far transfer (closer or farther from what was taught on the course)
+
+training length - not enough
+
+ -->
 
 
 ## Abstract
@@ -27,7 +47,10 @@ Por sua demonstrada eficácia, é ensinada em contextos psiquiátricos e clínic
 
 Motivational interviewing has been demonstrated to be fairly efficacious and effective strategy in controlling a number of highly prevalent mental health conditions, among them disruptive, impulse-control, and conduct disorders ([Burke, 2003](http://www.vcu.edu/idas/pdfs/efficacy%20of%20MI-meta-analysis.pdf); [Lundahl, 2009](http://faculty.fortlewis.edu/burke_b/criticalthinking/readings/mi-burke.pdf)). Despite its demonstrated effectiveness, training novice providers in motivational interviewing has remained a craft, traditional coaching models where a novice is mentored 1:1 by an expert still being the most prevalente model. <!-- ref --> Although effective, this method is all but scalable.
 
-* lit review on motivational interviewing efficacy (trials) and effectiveness (non-trial)
+* lit review on motivational interviewing efficacy (randomized trials) and effectiveness (observational) 
+
+<!-- Meta-analysis showed a significant effect (95% confidence interval) for motivational interviewing for combined effect estimates for body mass index, total blood cholesterol, systolic blood pressure, blood alcohol concentration and standard ethanol content, while combined effect estimates for cigarettes per day and for HbA1c were not significant. Motivational interviewing had a significant and clinically relevant effect in approximately three out of four studies, with an equal effect on physiological (72%) and psychological (75%) diseases. Psychologists and physicians obtained an effect in approximately 80% of the studies, while other healthcare providers obtained an effect in 46% of the studies. When using motivational interviewing in brief encounters of 15 minutes, 64% of the studies showed an effect. More than one encounter with the patient ensures the effectiveness of motivational interviewing. -->
+
 * lit review on educational methods applied to motivational interviewing and mental health conditions in general
 
 The objective of this educational, reproducible, parallel randomized trial is therefore to compare a scalable coaching training intervention versus a control training method among a group of healthcare professionals and students who frequently encounter patients with mental health problems. We measured its effect on knowledge, clinical impact and satisfaction. We hypothesized that, compared to control, the "scalable coaching arm" would result in increased knowledge, clinical impact and provider satisfaction with the learning experience.
@@ -41,6 +64,28 @@ survey asking whether they cheated and looked up course material when doing eval
 reading assignments in the control arm were chosen to roughly match the amount of time and content allocated to participants in the motivation interviewing group
  -->
 
+qualitative
+
+Support Information
+
+Apresentação mais dinâmica, imagens? Gráficos? Algorítimos desenvolvidos? Uso de webcam às vezes?
+Disponibilizar artigos em PDF no final, citar na apresentação.
+A tela inicial ficar no que for para ver primeiro.
+Bom tempo de vídeo.
+
+Casos Clínicos
+Qualidade do vídeo para não soar “amador”. 
+Colocar não só erros mas acertos e missings tb.
+Paradas ou legendas no meio dos vídeos para ilustar falar ou comportamentos importantes. Podemos fazer nos vídeos mais adiantados.
+Tem um gabarito errado.
+Fazer animações?
+Aluno mais avançado ser “coach” do mais antigo. Tira dúvidas por exemplo.
+Casos práticos
+Em casos mais adiantados interagir com a tela.
+
+
+
+ -->
 ### Qualitative study
 <!-- add sections from wil's study based on coreq guidelines -->
 
@@ -67,23 +112,108 @@ Em resumo, na primeira semana os participantes assistirão a um vídeo que  desc
 Os exemplos clínicos abordarão patologias e situações bastante prevalentes e que se configuram problemas de saúde pública como, por exemplo, etilismo, tabagismo, estímulo ao exercício físico, adesão ao tratamento, entre outros.
  -->
 
-<!-- add details about intervention -->
+
+<!-- 
+Semana 1
+
+O que é entrevista motivacional e sua relação com mudança de comportamento
+Princípios Básicos.
+Evidências.
+Como usar na prática clínica.
+
+Semana 2
+Desenvolvendo as habilidades básicas
+“Entendendo a cabeça do paciente”
+Como perguntar?
+Como escutar?
+Como informar?
+
+Semana 3
+Integrando tudo
+Integrando as habilidades
+Exemplos de casos mais “facéis”
+
+Semana 4
+Integrando tudo 2 
+Dificuldades na EM
+Casos mais difíceis
+
+ -->
 
 
-The control arm was provided with weekly texts for them to read regarding motivational interviewing. These texts focused on <!-- add later -->
+#### Scalable coaching
+The scalable coaching arm used as its main principle Merrienboer's Instructional Design Theory Complex Learning ([Merrienboer, 2012](http://www.amazon.com/Steps-Complex-Learning-Four-Component-Instructional-ebook/dp/B009WMBP7O/ref=sr_1_1?ie=UTF8&qid=1401304465&sr=8-1&keywords=merrienboer+complex)). Briefly, in week one participants were exposed to videos first briefly describing all four main process skills advocated by motivational interviewing experts, namely, engaging, focusing, evoking and planning. Then, still during the first week, participants were exposed to a video with a fictitious cases where they had to use these same skills at a very simple level. Subsequent weeks increased the complexity level of the cases, but remained providing participants with cases where all four skills were required, thus mimicking a real clinical situation.
 
+<!-- add details about intervention after we run some initial tests -->
+
+
+#### Control arm
+The control arm was provided with weekly texts for subjects to read regarding four construct regarding motivational interviewing. These texts focused on a set of four skills related to motivational interviewing, namely, engaging, focusing, evoking and planning. <!-- list texts -->
+
+#### Educational material reproducibility
 All educational material for this course is made available within our Reproducible Research repositories, and delivered through the original [Open edX platform](http://code.edx.org/). Videos were provided in Brazilian Portuguese. All remaining material was made available in Portuguese, although both Italian and English versions are provided within our Reproducible Research repositories (see subsequent section on Reproducible Research).
 
 
 <!-- add CONSORT for Non-Pharmacological Treatment Interventions -->
 
+### Outcome variables
 <!-- soft skills, tacit knowledge, rationality, competition, empathy, choice, aesthetics, memory, emotion, happiness - ask mauro for opinion on what could work -->
 
-#### Outcome variables
 <!-- : toolkit send email to yourself as 4 ferramentas vão ser, a principio:  outcome variables:  -->
 
-Our study had four main categories of outcome variables: work engagement, meaning, purpose in life and job satisfaction, all described under the subsequent sections. Per CONSORT Statement guidelines, any eventual changes to outcome measures deviating from the initial plan and occurring throughout the trial were recorded in our versioning system ([Github](https://github.com/)), thus ensuring full reproducibility. However, changes were avoided unless strictly necessary.
+<!-- 
 
+merrienboer whole tasks 
+
+Outcome:
+    -   Persuasion of instructor.
+Student Satisfaction.
+Improve knowledge in Positive Psychology.
+Improve clinical use of Positive Psychology Techniques.
+
+Scales: Questions (5-point scale or 7-point scale).
+
+Beginning of the class (use in sessions 2 to 4): How of the knowledge gained in last class did in your clinical practice? 
+
+End of the classe”s
+Persuasion http://casaa.unm.edu/download/miti3_1.pdf
+
+Overall how effective was the instructor?
+Overall how worthwhile was the course?
+Overall how much did you learn?
+
+ -->
+
+Our study had three main categories of outcome variables: Knowledge, User eXperience (UX) and impact on clinical practice, all described under the subsequent sections. Per CONSORT Statement guidelines, any eventual changes to outcome measures deviating from the initial plan and occurring throughout the trial were recorded in our versioning system ([Github](https://github.com/)), thus ensuring full reproducibility. However, changes were avoided unless strictly necessary.
+
+##### Knowledge
+
+
+Knowledge was measured through a group of questions (items) under four main process domains, namely: Engaging (a skill used to involve the client in talking about their issues, also assisting in the establishment of a relationship with the therapist), focusing (a skill used to focus the conversation on habits that individuals want to change), evoking (a skill used to elicit the motivations for change using devices such as raising their sense of the importance of change and trust about that change), and planning (a skill to plan how the changes will be implemented).
+
+Given that there are no standardized scales to measure knowledge within each of these domain areas, we conducted a parallel validation using a combination of Classical Psychometric Theory and Item Response Theory.
+
+An item (question) pool was initially created, covering all four domains, ultimately constituting items sets with 30 items (questions) each, for a total of 120 items (questions). 
+
+A randomly selected subset of this item pool of 120 items was exposed to the participants in our trial, using an anchoring approach for linked scales where each set contains a constant group of items that is repeated in every set, thus ensuring that all sets were connected. Subsequently, a sequence of exploratory and confirmatory factor analyses, reliability evaluation within each individual construct, and validity triangulating across different items was used to achieve a psychometrically valid summed construct-specific and overall scores to serve as the variables representing the knowledge outcome of our trial. Details about each of these analyses are presented within the Data Analysis section.
+
+Knowledge evaluation occurred at baseline and then at the end of weeks two and four. These assessments were automatically recorded within the edX Code platform under two databases ([MySQL](http://www.mysql.com/) for participant information and [MongoDB](https://www.mongodb.org/) for exercise information), both with a common id.
+
+##### User eXperience
+
+In this study we primarily measured User eXperience (UX) as participant satisfaction while participating in one of the two interventions. While the literature on the measurement of satisfaction within online education is vast, (see @banks2007reduction, @dibiase2005scaling and @ summers2005comparison for a few examples)  <!-- see http://www.westga.edu/~distance/ojdla/Fall133/sampson_ballenger133.html (Banks & Faul, 2007; Debourgh, 1998; Dibiase & Rademacher, 2005; Enockson, 1997; Heiman, 2008; McCabe, 1997; Summers, Waigandt, & Whittaker, 2005; Walker & Kelly, 2007). Several other studies focused on student and teacher interactions and perceptions of learning (Heiman, 2008; Rovai & Barnum, 2003); and social presence (Richardson & Swan, 2003) as part of students’ satisfaction. --> we have elected to use the scale developed by [Kuo et cols](http://www.irrodl.org/index.php/irrodl/article/view/1338/2416) since it is not only comprehensive but has also been shown to be psychometrically valid. The Sampson scale covers seven satisfaction sub-constructs, namely satisfaction with learner-learner interaction, learner-instructor interaction, learner-content interaction and overall satisfaction. Cronbach's alpha reliability was found to be above 0.88 for all subscales, the Kuo scale also having been validated against student self-efficacy. 
+
+Satisfaction was assessed at the end of weeks two and four using a set of questionnaires provided within the Open edX platform. These assessments are automatically recorded within the platform.
+
+##### Impact on clinical practice
+
+The last evaluated construct was the impact on clinical practice. Given that, to our knowledge, no previously validated scale has been devised to measure the impact of online learning on clinical practice, we have also devised a concomitant validation strategy. 
+
+Impact on clinical practice was measured through a group of questions (items) under one single domain (unidimensional scale). The item (question) focused on "How much has the knowledge you gained in this course has positively or negatively influenced your clinical practice, where 0 means no influence at all and 10 means an extremely influence." . A five-point Likert alternative pattern then covered the spectrum of positive or negative influence.
+
+This group of items was exposed to the participants in our trial. Similar to the knowledge domain, a sequence of exploratory and confirmatory factor analyses, reliability evaluation within each individual construct, and validity triangulating across different items was used to achieve a psychometrically valid summed score serving as the outcome measuring impact on clinical practice for our trial. Further details on how each of these analyses was conducted are presented within the Data Analysis section.
+
+Knowledge evaluation occurred at the end of weeks two and four. These assessments are also automatically recorded within the platform.
 
 <!-- 
 O conhecimento em EM foi medido através de um grupo de questões (itens) abordando os quatro princípios fundamentais da EM:
@@ -170,22 +300,6 @@ Control: standard presentation (slides and 2D figures).
 
 
 
-Outcome:
-    -	Persuasion of instructor.
-Student Satisfaction.
-Improve knowledge in Positive Psychology.
-Improve clinical use of Positive Psychology Techniques.
-
-Scales: Questions (5-point scale or 7-point scale).
-
-Beginning of the class (use in sessions 2 to 4): How of the knowledge gained in last class did in your clinical practice? 
-
-End of the classe”s
-Persuasion http://casaa.unm.edu/download/miti3_1.pdf
-
-Overall how effective was the instructor?
-Overall how worthwhile was the course?
-Overall how much did you learn?
 
 
 1) Não focar o curso de Entrevista Motivacional apenas em problemas psiquiátricos mas em problemas significativos de saúde pública e com alta prevalência. Por exemplo, não dar exemplos específicos de psiquiatria  (p.e Gambling, Anorexia, etc) mas focar os exemplos em TABAGISMO, ALCOOLISMO, EXERCÍCIO FÍSICO E QUEM SABE ATÉ ALGUM EXEMPLO CLÍNICO COMO HIPERTENSÃO. 
