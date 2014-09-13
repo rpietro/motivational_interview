@@ -111,3 +111,174 @@ Rollnick, S., Miller, W. R., & Butler, C. (2008). Motivational interviewing in h
 Shershneva, M., Kim, J. H., Kear, C., Heyden, R., Heyden, N., Lee, J., & Mitchell, S. (2014). Motivational interviewing workshop in a virtual world: learning as avatars. Family medicine, 46(4), 251-258.
 
 Söderlund, L. L., Madson, M. B., Rubak, S., & Nilsen, P. (2011). A systematic review of motivational interviewing training for general health care practitioners. Patient education and counseling, 84(1), 16-26.
+
+
+---
+
+## DOCUMENTATION
+
+# http://cran.r-project.org/web/packages/psych/vignettes/overview.pdf
+# http://personality-project.org/r/book/
+
+
+
+
+
+## INSTALLING AND CALLING PACKAGES
+
+setwd('/Users/rpietro/articles/motivational_interview/')
+# install.packages("psych" , repos='http://cran.us.r-project.org')
+# install.packages("car" , repos='http://cran.us.r-project.org')
+# install.packages("ctv", repos='http://cran.us.r-project.org')
+# install.packages("random.polychor.pa", repos='http://cran.us.r-project.org')
+# install.views("Psychometrics", repos='http://cran.us.r-project.org')
+# install.packages(list(c("GPArotation","mvtnorm","MASS")
+require("psych")
+require("car")
+
+
+
+
+## OPENING DATA
+
+# myData <- read.clipboard()
+# myData <- read.clipboard.csv()
+
+# https://docs.google.com/spreadsheets/d/1ieBm0AOPPLeyFyiWxRVH_IXjgAx4vHFNF1-N3vajyjY/edit#gid=167549095
+# http://www.r-bloggers.com/access-google-spreadsheet-directly-in-bash-and-in-r/
+
+mi <- read.csv("mi.csv", header = TRUE)
+
+
+
+
+
+
+## DATA MANAGEMENT
+
+# inverting variable values to ensure that a true means a correct answer
+
+# pat_passiveness lots_of_questions_good mi_quick_and_directive never_interrupt_pat mi_deceive_pat quick_fix nonpersonalized_motivations mi_paternalist amb_not_common mi_distract mi_2nd_WW mi_styles passive_listening fear_of_hp mi_is_instictive mi_bad_for_sud
+
+mi$pat_passiveness <- recode(mi$pat_passiveness,"0=1; 1=0")
+mi$lots_of_questions_good <- recode(mi$lots_of_questions_good,"0=1; 1=0")
+mi$mi_quick_and_directive <- recode(mi$mi_quick_and_directive,"0=1; 1=0")
+mi$never_interrupt_pat <- recode(mi$never_interrupt_pat,"0=1; 1=0")
+mi$pmi_deceive_pat <- recode(mi$mi_deceive_pat,"0=1; 1=0")
+mi$quick_fix <- recode(mi$quick_fix,"0=1; 1=0")
+mi$nonpersonalized_motivations <- recode(mi$nonpersonalized_motivations,"0=1; 1=0")
+mi$mi_paternalist <- recode(mi$mi_paternalist,"0=1; 1=0")
+mi$amb_not_common <- recode(mi$amb_not_common,"0=1; 1=0")
+mi$mi_distract <- recode(mi$mi_distract,"0=1; 1=0")
+mi$mi_2nd_WW <- recode(mi$mi_2nd_WW,"0=1; 1=0")
+mi$mi_styles <- recode(mi$mi_styles,"0=1; 1=0")
+mi$passive_listening <- recode(mi$passive_listening,"0=1; 1=0")
+mi$fear_of_hp <- recode(mi$fear_of_hp,"0=1; 1=0")
+mi$mi_is_instictive <- recode(mi$mi_is_instictive,"0=1; 1=0")
+mi$mi_bad_for_sud <- recode(mi$mi_bad_for_sud,"0=1; 1=0")
+
+
+
+# colnames(x) <- paste('V',1:10,sep='')
+
+summed_score  <- mi$pat_passiveness + mi$lots_of_questions_good + mi$exaggeration_technique + mi$mi_quick_and_directive + mi$pat_says_motivations + mi$mi_definition + mi$never_interrupt_pat + mi$mi_deceive_pat + mi$quick_fix + mi$nonpersonalized_motivations + mi$only_pro_arguments + mi$mi_paternalist + mi$amb_not_common + mi$amb_definition + mi$strengthening_the_pat + mi$impartial_listening + mi$mi_colaboration + mi$summary_helps + mi$mi_distract + mi$mi_2nd_WW + mi$mi_styles + mi$passive_listening + mi$listen_costeffectiveness + mi$fear_of_hp + mi$ask_not_direct + mi$verbalize_helps + mi$mi_is_instictive + mi$mi_low_cost + mi$mi_clinical_conditions + mi$mi_bad_for_sud
+## below will give you a sense of ceiling and floor effects
+summary(summed_score)
+
+
+
+item_vars  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+mi_items  <- mi[item_vars]
+headTail(mi_items)
+## below will give you a sense of ceiling and floor effects where mean value is the percentage of correct answers for a given items
+summary(mi_items)
+
+
+
+
+
+## GRAPHICAL EXPLORATORY ANALYSIS
+
+describe(mi)
+headTail(mi)
+str(mi)
+describeBy(mi,mi$gender,skew=FALSE,ranges=FALSE)
+mi.mat <- describeBy(mi,list(mi$gender,mi$education), skew=FALSE,ranges=FALSE,mat=TRUE)
+headTail(mi.mat)
+
+# png('outlier.png')
+# (d2 <- outlier(mi,cex=.8))
+# dev.off()
+
+
+
+# png('pairspanels.png')
+# sat.d2 <- data.frame(mi,d2) #combine the d2 statistics from before with the mi data.frame
+# (pairs.panels(sat.d2,bg=c("yellow","blue")[(d2 > 25)+1],pch=21))
+# dev.off()
+
+# png('affect.png')
+# (pairs.panels(affect[14:17],bg=c("red","black","white","blue")[affect$Film],pch=21, + main="Affect varies by movies "))
+# dev.off()
+
+
+# violinBy(mi[5:6],mi$gender,grp.name=c("M", "F"),main="Density Plot by gender for SAT V and Q")
+
+
+## STOPPED AT PAGE 17
+
+
+
+
+
+
+
+## FACTOR ANALYSIS
+
+# http://personality-project.org/r/psych/help/irt.fa.html
+
+# http://stats.stackexchange.com/questions/31948/looking-for-a-step-through-an-example-of-a-factor-analysis-on-dichotomous-data
+
+
+fa_mi1 <- fa.poly(mi_items, nfactors=1, rotate="varimax")    # polychoric FA
+fa_mi1$fa$loadings        # loadings are the same as above ...
+
+
+fa_mi2 <- fa.poly(mi_items, nfactors=2, rotate="varimax")    # polychoric FA
+fa_mi2$fa$loadings        # loadings are the same as above ...
+
+
+factor.plot(fa_mi2$fa, cut=0.5)
+fa.diagram(fa_mi2)
+
+
+fa.parallel.poly(mi_items)      # parallel analysis for dichotomous data
+
+# library(random.polychor.pa)    # for random.polychor.pa()
+# random.polychor.pa(data.matrix=mi_items, nrep=5, q.eigen=0.99)
+
+
+
+
+
+
+
+
+
+## IRT
+
+
+set.seed(17)
+d9 <- sim.irt(9,1000,-2.5,2.5,mod="normal") #dichotomous items
+headTail(d9)
+> test <- irt.fa(d9$items)
+
+
+(calib1 <- irt.fa(mi_items))
+calib1
+
+
+
+## MULTILEVEL ANALYSIS
+
+
