@@ -138,7 +138,9 @@ setwd('/Users/rpietro/articles/motivational_interview/')
 # install.packages("car" , repos='http://cran.us.r-project.org')
 # install.packages("ctv", repos='http://cran.us.r-project.org')
 # install.packages("random.polychor.pa", repos='http://cran.us.r-project.org')
-install.packages("WrightMap", repos='http://cran.us.r-project.org')
+install.packages("tcltk2", repos='http://cran.us.r-project.org')
+# install.packages("WrightMap", repos='http://cran.us.r-project.org')
+# install.packages("TestScorer", repos='http://cran.us.r-project.org')
 # install.views("Psychometrics", repos='http://cran.us.r-project.org')
 # install.packages(list(c("GPArotation","mvtnorm","MASS")
 require("psych")
@@ -274,7 +276,10 @@ fa.parallel.poly(mi_items)      # parallel analysis for dichotomous data
 # vss
 
 
+## CORRESPONDENCE ANALYSIS
 
+# also see entire section about CA on http://cran.r-project.org/web/views/Psychometrics.html
+require(ca)
 
 
 
@@ -332,6 +337,12 @@ headTail(scores)
 # scores.df <- data.frame(true=v9$theta[ord],scores,unitweighted)
 # colnames(scores.df) <- c("True theta","irt theta","total","fit","rasch","total","fit")
 
+# http://cran.r-project.org/web/packages/ltm/ltm.pdf
+require(ltm)
+
+
+
+
 
 
 ## BIFACTOR MODELING
@@ -339,7 +350,10 @@ headTail(scores)
 om <- omega(mi_irt$rho,3)
 
 
+## QGRAPHS
 
+# http://www.jstatsoft.org/v48/i04/paper
+# http://cran.r-project.org/web/packages/qgraph/qgraph.pdf
 
 
 ## WRIGHT MAP
@@ -355,9 +369,66 @@ wrightMap( uni.proficiency, difficulties, use.hist = FALSE)
 
 
 
+
+## BRADLEY-TERRY MODELS FOR COMPARISON BETWEEN ANY TWO HEALTHCARE PROFESSIONALS
+
+# http://cran.r-project.org/web/packages/BradleyTerry2/vignettes/BradleyTerry.pdf
+# http://bradleyterry2.r-forge.r-project.org/extendedBTmodels.pdf
+
+require("BradleyTerry2")
+
+
+
+
+## LINKING DIFFERENT WAVES
+
+# http://cran.r-project.org/web/packages/plink/index.html
+# http://cran.r-project.org/web/packages/plink/vignettes/plink-UD.pdf
+require(plink)
+
+
+
+## GUI 
+
+library(TestScorer)
+library(tcltk2)
+
+
+
+
+## COPY DETECTION
+
+require(CopyDetect)
+
+
+
+
+
+## CAT
+
+require(catR)
+# http://cran.r-project.org/web/packages/catR/index.html
+
+
+
+
+
+
 ## MULTILEVEL ANALYSIS
 
 # Dei uma olhada no banco de dados e acho q uma excelente comparação seria PSIQUIATRAS + PSICOLÓGOS (SPECIALISTS) VS OUTROS (NON-SPECIALISTS). Temos 102 indíviduos (49 no SPEC. e 53 no NON-SPEC). N bem próximos nos 2 grupos (ANEXEI UMA PLANILHA, 0 é para os NON-SPEC., 1 é para os SPEC. )
+
+
+
+
+
+## MIRT
+
+require(mirt)
+
+
+
+
 
 
 ## DAKS
