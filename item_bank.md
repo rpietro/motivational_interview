@@ -76,6 +76,9 @@ The marginal maximum likelihood was used to calculated the probabilities of all 
 ## Results
 
 
+http://cran.r-project.org/web/packages/psych/vignettes/overview.pdf
+
+
 ## Discussion
 
 

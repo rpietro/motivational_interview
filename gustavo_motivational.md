@@ -59,6 +59,11 @@ The objective of this educational, reproducible, parallel randomized trial is th
 ## Methods
 
 <!-- 
+
+survey asking whether they cheated and looked up course material when doing evaluation
+reading assignments in the control arm were chosen to roughly match the amount of time and content allocated to participants in the motivation interviewing group
+ -->
+
 qualitative
 
 Support Information
