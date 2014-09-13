@@ -121,7 +121,11 @@ Söderlund, L. L., Madson, M. B., Rubak, S., & Nilsen, P. (2011). A systematic r
 ## DOCUMENTATION
 
 # http://cran.r-project.org/web/packages/psych/vignettes/overview.pdf
-# http://personality-project.org/r/book/
+
+# CHECK BELOW FOR ADDITIONAL ANALYSES
+# http://personality-project.org/r/book/ 
+# http://philchalmers.github.io/mirt/mirt-vignettes.html
+# http://cran.r-project.org/web/views/Psychometrics.html
 
 
 
@@ -134,6 +138,7 @@ setwd('/Users/rpietro/articles/motivational_interview/')
 # install.packages("car" , repos='http://cran.us.r-project.org')
 # install.packages("ctv", repos='http://cran.us.r-project.org')
 # install.packages("random.polychor.pa", repos='http://cran.us.r-project.org')
+install.packages("WrightMap", repos='http://cran.us.r-project.org')
 # install.views("Psychometrics", repos='http://cran.us.r-project.org')
 # install.packages(list(c("GPArotation","mvtnorm","MASS")
 require("psych")
@@ -184,17 +189,16 @@ mi$mi_bad_for_sud <- recode(mi$mi_bad_for_sud,"0=1; 1=0")
 
 # colnames(x) <- paste('V',1:10,sep='')
 
-summed_score  <- mi$pat_passiveness + mi$lots_of_questions_good + mi$exaggeration_technique + mi$mi_quick_and_directive + mi$pat_says_motivations + mi$mi_definition + mi$never_interrupt_pat + mi$mi_deceive_pat + mi$quick_fix + mi$nonpersonalized_motivations + mi$only_pro_arguments + mi$mi_paternalist + mi$amb_not_common + mi$amb_definition + mi$strengthening_the_pat + mi$impartial_listening + mi$mi_colaboration + mi$summary_helps + mi$mi_distract + mi$mi_2nd_WW + mi$mi_styles + mi$passive_listening + mi$listen_costeffectiveness + mi$fear_of_hp + mi$ask_not_direct + mi$verbalize_helps + mi$mi_is_instictive + mi$mi_low_cost + mi$mi_clinical_conditions + mi$mi_bad_for_sud
-## below will give you a sense of ceiling and floor effects
-summary(summed_score)
-
-
-
 item_vars  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
 mi_items  <- mi[item_vars]
 headTail(mi_items)
 ## below will give you a sense of ceiling and floor effects where mean value is the percentage of correct answers for a given items
 summary(mi_items)
+
+
+item_age_gender_educ_vars  <- c("age","gender","education","pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+mi_items_age_gender_educ  <- mi[item_age_gender_educ_vars]
+
 
 
 
@@ -228,7 +232,7 @@ headTail(mi.mat)
 # violinBy(mi[5:6],mi$gender,grp.name=c("M", "F"),main="Density Plot by gender for SAT V and Q")
 
 
-## STOPPED AT PAGE 17
+# STOPPED AT PAGE 17
 
 
 
@@ -260,8 +264,25 @@ fa.parallel.poly(mi_items)      # parallel analysis for dichotomous data
 # library(random.polychor.pa)    # for random.polychor.pa()
 # random.polychor.pa(data.matrix=mi_items, nrep=5, q.eigen=0.99)
 
+# use xtable to display tables
 
 
+
+## CLUSTER ANALYSIS
+# possible with dichotomous items??
+# iclust
+# vss
+
+
+
+
+
+
+## ITEM ANALYSIS
+
+ # need to convert below to numeric variables to make it work
+# best.scales(mi_items_age_gender_educ,criteria=c("gender","education","age"),cut=.1,dictionary=bfi.dictionary[,1:3])
+# mirt for irt-fa
 
 
 
@@ -270,18 +291,75 @@ fa.parallel.poly(mi_items)      # parallel analysis for dichotomous data
 
 ## IRT
 
+# factor analysis again
+mi_irt  <- irt.fa(mi_items)
+irt.fa(mi_items[1:5])
+irt.fa(mi_items[6:10])
+irt.fa(mi_items[11:15])
+irt.fa(mi_items[16:20])
+irt.fa(mi_items[21:25])
+irt.fa(mi_items[26:30])
 
-set.seed(17)
-d9 <- sim.irt(9,1000,-2.5,2.5,mod="normal") #dichotomous items
-headTail(d9)
-> test <- irt.fa(d9$items)
+op <- par(mfrow=c(3,1))
+plot(mi_irt,type="ICC")
+plot(mi_irt,type="IIC")
+plot(mi_irt,type="test")
+op <- par(mfrow=c(1,1))
 
 
-(calib1 <- irt.fa(mi_items))
-calib1
+
+
+## DIF
+
+require(difR)
+require(mirt)
+require(lordif)
+require(latdiag)
+
+
+
+
+
+## IRT SCORING
+
+total <- rowSums(mi_items)
+ord <- order(total)
+items <- mi_items[ord,]
+scores <- score.irt(mi_irt,items)
+headTail(scores)
+# unitweighted <- score.irt(items=mi_items,keys=rep(1,9))
+# warnings()
+# scores.df <- data.frame(true=v9$theta[ord],scores,unitweighted)
+# colnames(scores.df) <- c("True theta","irt theta","total","fit","rasch","total","fit")
+
+
+
+## BIFACTOR MODELING
+
+om <- omega(mi_irt$rho,3)
+
+
+
+
+
+## WRIGHT MAP
+require(WrightMap)
+# Plotting results of a unidimensional Rasch Model
+## Mock results
+uni.proficiency <- rnorm(1000, mean = -0.5, sd = 1)
+difficulties <- sort( rnorm( 20))
+## Default map
+wrightMap( uni.proficiency, difficulties)
+## Density version
+wrightMap( uni.proficiency, difficulties, use.hist = FALSE)
 
 
 
 ## MULTILEVEL ANALYSIS
 
+# Dei uma olhada no banco de dados e acho q uma excelente comparação seria PSIQUIATRAS + PSICOLÓGOS (SPECIALISTS) VS OUTROS (NON-SPECIALISTS). Temos 102 indíviduos (49 no SPEC. e 53 no NON-SPEC). N bem próximos nos 2 grupos (ANEXEI UMA PLANILHA, 0 é para os NON-SPEC., 1 é para os SPEC. )
 
+
+## DAKS
+
+# http://cran.r-project.org/web/packages/DAKS/vignettes/DAKS.pdf
