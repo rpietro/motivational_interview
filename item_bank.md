@@ -134,11 +134,12 @@ Söderlund, L. L., Madson, M. B., Rubak, S., & Nilsen, P. (2011). A systematic r
 ## INSTALLING AND CALLING PACKAGES
 
 setwd('/Users/rpietro/articles/motivational_interview/')
+# setwd('/Users/rpietro/articles/motivational_interview/')
 # install.packages("psych" , repos='http://cran.us.r-project.org')
 # install.packages("car" , repos='http://cran.us.r-project.org')
 # install.packages("ctv", repos='http://cran.us.r-project.org')
 # install.packages("random.polychor.pa", repos='http://cran.us.r-project.org')
-install.packages("tcltk2", repos='http://cran.us.r-project.org')
+<!-- install.packages("tcltk2", repos='http://cran.us.r-project.org') -->
 # install.packages("WrightMap", repos='http://cran.us.r-project.org')
 # install.packages("TestScorer", repos='http://cran.us.r-project.org')
 # install.views("Psychometrics", repos='http://cran.us.r-project.org')
@@ -191,14 +192,26 @@ mi$mi_bad_for_sud <- recode(mi$mi_bad_for_sud,"0=1; 1=0")
 
 # colnames(x) <- paste('V',1:10,sep='')
 
-item_vars  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+item_vars_old  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+item_vars  <- c("pat_passiveness", "pat_says_motivations", "mi_definition", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "mi_paternalist", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+
+# passive_listening           -0.244 catch
+# exaggeration_technique      -0.232 not clear
+# mi_quick_and_directive       0.108 not clear
+# amb_not_common               0.147 easy
+# lots_of_questions_good       0.172 not clear
+# listen_costeffectiveness     0.175 
+# never_interrupt_pat          0.257 not clear
+# only_pro_arguments           0.268
+
+
 mi_items  <- mi[item_vars]
 headTail(mi_items)
 ## below will give you a sense of ceiling and floor effects where mean value is the percentage of correct answers for a given items
 summary(mi_items)
 
 
-item_age_gender_educ_vars  <- c("age","gender","education","pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+item_age_gender_educ_vars  <- c("age","gender","education","pat_passiveness", "lots_of_questions_good", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
 mi_items_age_gender_educ  <- mi[item_age_gender_educ_vars]
 
 
@@ -257,6 +270,9 @@ fa_mi2 <- fa.poly(mi_items, nfactors=2, rotate="varimax")    # polychoric FA
 fa_mi2$fa$loadings        # loadings are the same as above ...
 
 
+factor.plot(fa_mi1$fa, cut=0.5)
+fa.diagram(fa_mi1)
+
 factor.plot(fa_mi2$fa, cut=0.5)
 fa.diagram(fa_mi2)
 
@@ -302,8 +318,7 @@ irt.fa(mi_items[1:5])
 irt.fa(mi_items[6:10])
 irt.fa(mi_items[11:15])
 irt.fa(mi_items[16:20])
-irt.fa(mi_items[21:25])
-irt.fa(mi_items[26:30])
+irt.fa(mi_items[21:22])
 
 op <- par(mfrow=c(3,1))
 plot(mi_irt,type="ICC")
@@ -434,3 +449,70 @@ require(mirt)
 ## DAKS
 
 # http://cran.r-project.org/web/packages/DAKS/vignettes/DAKS.pdf
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+> fa_mi1 <- fa.poly(mi_items, nfactors=1, rotate="varimax")    # polychoric FA
+Loading required package: mvtnorm
+Loading required package: parallel
+
+Loading required package: MASS
+Warning message:
+In cor.smooth(mat) : Matrix was not positive definite, smoothing was done
+> fa_mi1$fa$loadings        # loadings are the same as above ...
+
+Loadings:
+                            MR1
+* pat_passiveness              0.646
+* pat_says_motivations         0.651
+* mi_definition                0.610
+* quick_fix                    0.686
+* nonpersonalized_motivations  0.366
+* mi_paternalist               0.487
+* amb_definition               0.492
+* strengthening_the_pat        0.702
+* impartial_listening          0.648
+* mi_colaboration              0.504
+* summary_helps                0.601
+* mi_distract                  0.553
+* mi_2nd_WW                    0.440
+* fear_of_hp                   0.382
+* ask_not_direct               0.490
+* verbalize_helps              0.513
+* mi_low_cost                  0.803
+* mi_clinical_conditions       0.481
+* mi_bad_for_sud               0.468
+* mi_is_instictive
+* mi_styles
+* mi_deceive_pat
+
+
+Potentially excluded
+
+passive_listening           -0.244 catch
+exaggeration_technique      -0.232 not clear
+mi_quick_and_directive       0.108 not clear
+amb_not_common               0.147 easy
+lots_of_questions_good       0.172 not clear
+listen_costeffectiveness     0.175 
+never_interrupt_pat          0.257 not clear
+only_pro_arguments           0.268
+
+
+
+
+                 MR1
+SS loadings    6.425
+Proportion Var 0.214
