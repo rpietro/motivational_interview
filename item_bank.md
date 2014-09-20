@@ -194,7 +194,7 @@ mi$mi_bad_for_sud <- recode(mi$mi_bad_for_sud,"0=1; 1=0")
 
 item_vars_old  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
 
-item_vars <- c("pat_passiveness", "pat_says_motivations", "quick_fix", "amb_definition", "strengthening_the_pat", "impartial_listening", "summary_helps", "mi_distract", "fear_of_hp", "verbalize_helps", "mi_low_cost", "mi_clinical_conditions")
+item_vars <- c("pat_passiveness", "pat_says_motivations", "quick_fix", "amb_definition", "strengthening_the_pat", "summary_helps", "mi_distract", "verbalize_helps", "mi_low_cost", "mi_clinical_conditions")
 
 
 
@@ -319,9 +319,6 @@ require(ca)
 mi_irt  <- irt.fa(mi_items)
 irt.fa(mi_items[1:5])
 irt.fa(mi_items[6:10])
-irt.fa(mi_items[11:15])
-irt.fa(mi_items[16:20])
-irt.fa(mi_items[21:22])
 
 op <- par(mfrow=c(3,1))
 plot(mi_irt,type="ICC")
