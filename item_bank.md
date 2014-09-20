@@ -193,7 +193,10 @@ mi$mi_bad_for_sud <- recode(mi$mi_bad_for_sud,"0=1; 1=0")
 # colnames(x) <- paste('V',1:10,sep='')
 
 item_vars_old  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
-item_vars  <- c("pat_passiveness", "pat_says_motivations", "mi_definition", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "mi_paternalist", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+
+item_vars <- c("pat_passiveness", "pat_says_motivations", "quick_fix", "amb_definition", "strengthening_the_pat", "impartial_listening", "summary_helps", "mi_distract", "fear_of_hp", "verbalize_helps", "mi_low_cost", "mi_clinical_conditions")
+
+
 
 # passive_listening           -0.244 catch
 # exaggeration_technique      -0.232 not clear
