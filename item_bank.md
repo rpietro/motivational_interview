@@ -1,5 +1,6 @@
 # An item bank and computerized adaptive test to measure knowledge of Motivational Interviewing among healthcare professionals: A semantic reproducible research protocol for automatic item generation
 
+
 Gustavo Medeiros  
 Rafael Ayvazian  
 Wilmax Cruz  
@@ -80,6 +81,8 @@ http://cran.r-project.org/web/packages/psych/vignettes/overview.pdf
 
 
 ## Discussion
+
+<!-- add causal diagram file -->
 
 
 ## References

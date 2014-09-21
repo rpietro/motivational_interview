@@ -1,0 +1,56 @@
+digraph causal_diagram {
+
+	/* http://www.hsph.harvard.edu/wp-content/uploads/sites/343/2013/03/causaldia.pdf
+	book pearl
+	https://mail.google.com/mail/u/0/?tab=wm#sent/148967e11d8b5b75
+	*/
+
+	subgraph cluster_0 {
+		node [style=filled,color="#AA3939"];
+		a0 -> a1 -> a2 -> a3;
+		label = "evolutionary";
+		color = gray
+	}
+
+	subgraph cluster_1 {
+		node [style=filled,color="#AA6C39"];
+		b0 -> b1 -> b2 -> b3;
+		label = "physiological";
+		color = gray
+	}
+
+	subgraph cluster_2 {
+		node [style=filled,color="#226666"];
+		c0 -> c1 -> c2 -> c3;
+		label = "neurological";
+		color = gray
+	}
+
+		subgraph cluster_3 {
+		node [style=filled,color="#2E882E"];
+		d0 -> d1 -> d2 -> d3;
+		label = "cognitive";
+		color = gray
+	}
+
+		subgraph cluster_4 {
+		node [style=filled,color="#FFAAAA"];
+		e0 -> e1 -> e2 -> e3;
+		label = "phenomenological";
+		color = gray
+	}
+
+		subgraph cluster_5 {
+		node [style=filled,color="#669999"];
+		f0 -> f1 -> f2 -> f3;
+		label = "cultural";
+		color = gray
+	}
+
+	a0 -> f3 [label = "mechanism a"];
+	b1 -> d2 [label = "mechanism b"];
+	a2 -> a0 [label = "mechanism c"];
+	a0 -> a3 [label = "mechanism d"];
+	a1 -> c3 [label = "mechanism e"];
+	c3 -> e2 [label = "mechanism f"]
+}
