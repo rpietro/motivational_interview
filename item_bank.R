@@ -13,6 +13,7 @@
 ## INSTALLING AND CALLING PACKAGES
 
 setwd('/Users/rpietro/articles/motivational_interview/')
+
 # setwd('/Users/rpietro/articles/motivational_interview/')
 # install.packages("psych" , repos='http://cran.us.r-project.org')
 # install.packages("car" , repos='http://cran.us.r-project.org')
@@ -70,13 +71,14 @@ mi$mi_is_instictive <- recode(mi$mi_is_instictive,"0=1; 1=0")
 mi$mi_bad_for_sud <- recode(mi$mi_bad_for_sud,"0=1; 1=0")
 
 
+names(mi)
+
 
 # colnames(x) <- paste('V',1:10,sep='')
 
-item_vars_old  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
+# item_vars_old  <- c("pat_passiveness", "lots_of_questions_good", "exaggeration_technique", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "passive_listening", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
 
-item_vars <- c("pat_passiveness", "pat_says_motivations", "quick_fix", "amb_definition", "strengthening_the_pat", "summary_helps", "mi_distract", "verbalize_helps", "mi_low_cost", "mi_clinical_conditions")
-
+item_vars <- c("pat_passiveness", "pat_says_motivations", "quick_fix", "amb_definition", "strengthening_the_pat", "summary_helps", "mi_distract", "verbalize_helps", "mi_low_cost","mi_clinical_conditions","mi_distract","summary_helps","no_mot_dif","criticize_relapse","confrontation_quest","aa_uses_mi","normalizing_techniq","info_is_change","mi_rogers_empathy","mi_pretreatment","accept_and_approve","scores_questions")
 
 mi_items  <- mi[item_vars]
 headTail(mi_items)
@@ -84,11 +86,26 @@ headTail(mi_items)
 summary(mi_items)
 
 
-item_age_gender_educ_vars  <- c("age","gender","education","pat_passiveness", "lots_of_questions_good", "mi_quick_and_directive", "pat_says_motivations", "mi_definition", "never_interrupt_pat", "mi_deceive_pat", "quick_fix", "nonpersonalized_motivations", "only_pro_arguments", "mi_paternalist", "amb_not_common", "amb_definition", "strengthening_the_pat", "impartial_listening", "mi_colaboration", "summary_helps", "mi_distract", "mi_2nd_WW", "mi_styles", "listen_costeffectiveness", "fear_of_hp", "ask_not_direct", "verbalize_helps", "mi_is_instictive", "mi_low_cost", "mi_clinical_conditions", "mi_bad_for_sud")
-mi_items_age_gender_educ  <- mi[item_age_gender_educ_vars]
+item_socdem_vars  <- c("age","gender","education")
+mi_socdem_items  <- mi[item_socdem_vars]
 
 
+item1_vars <- c("pat_passiveness", "pat_says_motivations", "quick_fix", "amb_definition", "strengthening_the_pat", "summary_helps", "mi_distract", "verbalize_helps")
+mi1_items_  <- mi[item1_vars]
+mi1_items  <- mi1_items_[complete.cases(mi1_items_),]
+# final[complete.cases(final),]
+headTail(mi1_items)
+## below will give you a sense of ceiling and floor effects where mean value is the percentage of correct answers for a given items
+summary(mi1_items)
 
+
+item2_vars <- c("mi_low_cost","mi_clinical_conditions","mi_distract","summary_helps","no_mot_dif","criticize_relapse","confrontation_quest","aa_uses_mi","normalizing_techniq","info_is_change","mi_rogers_empathy","mi_pretreatment","accept_and_approve","scores_questions")
+mi2_items_  <- mi[item1_vars]
+mi2_items  <- mi2_items_[complete.cases(mi2_items_),]
+# final[complete.cases(final),]
+headTail(mi2_items)
+## below will give you a sense of ceiling and floor effects where mean value is the percentage of correct answers for a given items
+summary(mi2_items)
 
 
 
@@ -135,22 +152,33 @@ headTail(mi.mat)
 # http://stats.stackexchange.com/questions/31948/looking-for-a-step-through-an-example-of-a-factor-analysis-on-dichotomous-data
 
 
-fa_mi1 <- fa.poly(mi_items, nfactors=1, rotate="varimax")    # polychoric FA
-fa_mi1$fa$loadings        # loadings are the same as above ...
+fa_mi1_1factor <- fa.poly(mi1_items, nfactors=1, rotate="varimax")    # polychoric FA
+fa_mi1_1factor$fa$loadings        # loadings are the same as above ...
+
+fa_mi2_1factor <- fa.poly(mi2_items, nfactors=1, rotate="varimax")    # polychoric FA
+fa_mi2_1factor$fa$loadings        # loadings are the same as above ...
 
 
-fa_mi2 <- fa.poly(mi_items, nfactors=2, rotate="varimax")    # polychoric FA
-fa_mi2$fa$loadings        # loadings are the same as above ...
 
 
-factor.plot(fa_mi1$fa, cut=0.5)
-fa.diagram(fa_mi1)
+fa_mi1_1factor <- fa.poly(mi1_items, nfactors=2, rotate="varimax")    # polychoric FA
+fa_mi1_1factor$fa$loadings        # loadings are the same as above ...
 
-factor.plot(fa_mi2$fa, cut=0.5)
-fa.diagram(fa_mi2)
+fa_mi2_1factor <- fa.poly(mi2_items, nfactors=2, rotate="varimax")    # polychoric FA
+fa_mi2_1factor$fa$loadings        # loadings are the same as above ...
 
 
-fa.parallel.poly(mi_items)      # parallel analysis for dichotomous data
+
+
+factor.plot(fa_mi1_1factor$fa, cut=0.5)
+fa.diagram(fa_mi1_1factor)
+
+factor.plot(fa_mi2_1factor$fa, cut=0.5)
+fa.diagram(fa_mi2_1factor)
+
+
+fa.parallel.poly(mi1_items)      # parallel analysis for dichotomous data
+fa.parallel.poly(mi2_items)      # parallel analysis for dichotomous data
 
 # library(random.polychor.pa)    # for random.polychor.pa()
 # random.polychor.pa(data.matrix=mi_items, nrep=5, q.eigen=0.99)
@@ -186,17 +214,30 @@ require(ca)
 ## IRT
 
 # factor analysis again
-mi_irt  <- irt.fa(mi_items)
-irt.fa(mi_items[1:5])
-irt.fa(mi_items[6:10])
+mi1_irt  <- irt.fa(mi1_items)
+irt.fa(mi1_items[1:5])
+irt.fa(mi1_items[6:10])
 
-op <- par(mfrow=c(3,1))
-plot(mi_irt,type="ICC")
-plot(mi_irt,type="IIC")
-plot(mi_irt,type="test")
-op <- par(mfrow=c(1,1))
+op1 <- par(mfrow=c(3,1))
+plot(mi1_irt,type="ICC")
+plot(mi1_irt,type="IIC")
+plot(mi1_irt,type="test")
+op1 <- par(mfrow=c(1,1))
 
 
+
+
+
+# factor analysis again
+mi2_irt  <- irt.fa(mi2_items)
+irt.fa(mi2_items[1:5])
+irt.fa(mi2_items[6:10])
+
+op1 <- par(mfrow=c(3,1))
+plot(mi2_irt,type="ICC")
+plot(mi2_irt,type="IIC")
+plot(mi2_irt,type="test")
+op2 <- par(mfrow=c(1,1))
 
 
 ## DIF
