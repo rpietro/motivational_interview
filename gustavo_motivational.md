@@ -3,7 +3,6 @@
 <!-- out of my shoes methodology -->
 
 
-Gustavo Medeiros  
 Hermano Tavares  
 Bruno Melo  
 Joao Ricardo Vissoci  
