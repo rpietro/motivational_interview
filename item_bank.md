@@ -1,7 +1,6 @@
 # An item bank and computerized adaptive test to measure knowledge of Motivational Interviewing among healthcare professionals: A semantic reproducible research protocol for automatic item generation
 
 
-Gustavo Medeiros  
 Rafael Ayvazian  
 Wilmax Cruz  
 Hermano Tavares  
